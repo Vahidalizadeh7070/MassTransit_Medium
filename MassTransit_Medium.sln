@@ -5,6 +5,8 @@ VisualStudioVersion = 17.4.33213.308
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ScheduleService.API", "ScheduleService.API\ScheduleService.API.csproj", "{FBE2E465-896B-4E88-8F63-75080A4A9D78}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EmailService", "EmailService\EmailService.csproj", "{D4D64AE3-C7C0-4BDE-BF85-DA86D15B5D87}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{FBE2E465-896B-4E88-8F63-75080A4A9D78}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FBE2E465-896B-4E88-8F63-75080A4A9D78}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FBE2E465-896B-4E88-8F63-75080A4A9D78}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D4D64AE3-C7C0-4BDE-BF85-DA86D15B5D87}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D4D64AE3-C7C0-4BDE-BF85-DA86D15B5D87}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D4D64AE3-C7C0-4BDE-BF85-DA86D15B5D87}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D4D64AE3-C7C0-4BDE-BF85-DA86D15B5D87}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
