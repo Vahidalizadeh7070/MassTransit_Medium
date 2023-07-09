@@ -1,5 +1,7 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using MassTransit;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using ScheduleService.API.DTO.ScheduleDTOs;
 
 namespace ScheduleService.API.Controllers
 {
@@ -7,9 +9,13 @@ namespace ScheduleService.API.Controllers
     [ApiController]
     public class ScheduleController : ControllerBase
     {
-        public ScheduleController()
-        {
+        private readonly IPublishEndpoint _publishEndpoint;
+        private readonly ILogger<CreateScheduleDTO> _logger;
 
+        public ScheduleController(IPublishEndpoint publishEndpoint, ILogger<CreateScheduleDTO> logger)
+        {
+            _publishEndpoint = publishEndpoint;
+            _logger = logger;
         }
 
         [HttpPost]
