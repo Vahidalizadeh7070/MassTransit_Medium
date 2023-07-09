@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using ScheduleService.API.DTO.ScheduleDTOs;
+using SharedMessages.Schedule;
 
 namespace ScheduleService.API.Controllers
 {
@@ -19,9 +20,18 @@ namespace ScheduleService.API.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Post()
+        public async Task<IActionResult> Post(CreateScheduleDTO createScheduleDTO)
         {
-            return Ok();
+            _logger.Log(LogLevel.Information, $"Schedule has been created at{createScheduleDTO.ScheduleDate}");
+            await _publishEndpoint.Publish<ScheduleCreated>(new
+            {
+                createScheduleDTO.Id,
+                createScheduleDTO.Title,
+                createScheduleDTO.ScheduleDate,
+                createScheduleDTO.IsActive,
+                createScheduleDTO.ScheduleCreated
+            });
+            return Ok($"The message has been sent to the consumer - Title: ${createScheduleDTO.Title}");
         }
     }
 }
