@@ -6,5 +6,7 @@
         public string Title { get; set; }
         public DateTime ScheduleDate { get; set; }
         public bool IsActive { get; set; } = false;
+
+        public DateTime ScheduleCreated { get; set; } = DateTime.Now;
     }
 }
