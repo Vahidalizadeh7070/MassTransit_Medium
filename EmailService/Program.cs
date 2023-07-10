@@ -16,6 +16,12 @@ builder.Services.AddMassTransit(m =>
             h.Username("guest");
             h.Password("guest");
         });
+        cfg.ReceiveEndpoint("schedule", ep =>
+        {
+            ep.PrefetchCount = 16;
+            ep.UseMessageRetry(r => r.Interval(2, 100));
+            ep.ConfigureConsumer<ScheduleConsumer>(provider);
+        });
     }));
 });
 

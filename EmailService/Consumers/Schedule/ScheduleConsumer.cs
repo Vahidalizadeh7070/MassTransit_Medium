@@ -16,7 +16,7 @@ namespace EmailService.Consumers.Schedule
         {
             var message = context.Message.Title + context.Message.ScheduleDate;
             _logger.LogInformation(message);
-
+            await Task.CompletedTask;
         }
     }
 }
